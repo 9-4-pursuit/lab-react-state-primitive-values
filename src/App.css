@@ -1,5 +1,18 @@
 /* Your code here! */
+body {
+  margin: 25px auto;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  font-family: monospace;
+  background-color: bisque;
+}
+
 main {
   margin: 25px auto;
   width: 50%;
+  display: grid;
+  justify-content: center;
+  font-family: monospace;
+  background-color: bisque;
 }
