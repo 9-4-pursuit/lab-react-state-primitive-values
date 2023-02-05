@@ -1,62 +1,55 @@
-import { useState } from "react";
 import React from "react";
 import "./App.css";
 
-function App() {
+import "./index.css";
+import { useState } from "react";
+
+
+const App = () => {
   const [score, setScore] = useState(0);
   const [number, setNumber] = useState(1);
-  const [toggleWin, setToggleWin] = useState(false);
 
-  function scoreUp() {
-    setScore(score + number);
-    if (score > 100) {
-      setToggleWin(!toggleWin);
+const scoreUp = () => {
+    setScore((score) => score + number);
     }
-  }
 
-  function numberUp() {
-    if (score > 9) {
-      setScore(score - 10);
-      setNumber(number + 1);
+const numberUp = () => {
+    if (score >= 10) {
+      setNumber((number) => number + 1);
+      setScore((score) => score - 10);
     } else {
       alert("You can't afford that!");
     }
-  }
+  };
 
-  function playAgain() {
+const playAgain = () => {
     setScore(0);
     setNumber(1);
-    setToggleWin(false);
-  }
+  };
 
   return (
     <main>
-      <h1 onClick={scoreUp}>Current Score: {score}</h1>
-      <button
-        style={toggleWin ? { display: "none" } : { display: "block" }}
-        onClick={scoreUp}
-        value={number}
-      >
-        +{number}
+      {score < 100 ? (
+        <div className="game">
+      <h1>Current Score: {score}</h1>
+      <button onClick={scoreUp}> +{number}
       </button>
-      {/* must throw an Alert if value is less than 10 points */}
-      <button
-        style={toggleWin ? { display: "none" } : { display: "block" }}
-        onClick={numberUp}
-      >
-        Pay 10 points to change from +{number} to {number + 1}
+      <button onClick={numberUp}>
+        Pay 10 points to change from +{number} to +{number + 1}
       </button>
-      <h2 style={toggleWin ? { display: "block" } : { display: "none" }}>
-        You Win
-      </h2>
-      <button
-        style={toggleWin ? { display: "block" } : { display: "none" }}
-        onClick={playAgain}
-      >
+      </div>
+      ) : null}
+
+      {score >= 100 ? (
+        <div className="won">
+      <h2>You Win!</h2>
+      <button type="submit" onClick={playAgain}>
         Play again?
       </button>
-    </main>
+      </div>
+      ) : null}
+       </main>
   );
-}
+};
 
 export default App;
