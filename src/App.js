@@ -13,7 +13,10 @@ function App () {
    function byIncrements() {
     if (score < 10){
       window.alert("You can't afford that!")
-    } 
+    } else {
+      setIncrement(increment + 1);
+      setScore(score - 10);
+    }
     
    }
 
