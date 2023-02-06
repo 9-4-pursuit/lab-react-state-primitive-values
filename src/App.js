@@ -8,17 +8,23 @@ function App () {
 
    function changeScore() {
     setScore(score + increment);
+    if (score >=100) {
+      return (
+        <div>
+          <h2>You Win!</h2>
+        </div>
+      )
+    }
    }
 
    function byIncrements() {
     if (score < 10){
       window.alert("You can't afford that!")
-    } else {
+     } else {
       setIncrement(increment + 1);
       setScore(score - 10);
+     }
     }
-    
-   }
 
     return (
       <main>
