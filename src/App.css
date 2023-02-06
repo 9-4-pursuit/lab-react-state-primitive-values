@@ -1,4 +1,8 @@
 /* Your code here! */
+#root {
+  text-align: center;
+}
+
 main {
   margin: 25px auto;
   width: 50%;
