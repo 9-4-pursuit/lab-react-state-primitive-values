@@ -4,3 +4,7 @@ main {
   width: 50%;
   text-align: center;
 }
+
+#score {
+  font-weight: bold;
+}
