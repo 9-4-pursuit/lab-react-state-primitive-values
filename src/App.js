@@ -1,15 +1,25 @@
-import React, { createElement } from "react";
+import React from "react";
 import { useState } from "react";
-
+import  Switch from './Switch.js';
 import "./App.css";
+
 
 function App() {
   const [score, setScore] = useState(0);
   const [point, setPoint] = useState(1);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(true); //visibility state
   const displayalert = "You can't afford that!";
-  
+  const [value, setValue] = useState(false)
+  const handleToggle = () => {
+    setVisible((current) => !current);
+  };
 
+
+
+  //const removeElement = () => {setVisible  }
+  
+  //const showElement= () => setVisibile(true);
+  //const hideElement= () => setVisibile(false);
 
   
   function updateScore() {
@@ -32,15 +42,17 @@ function App() {
   }
 
   function winning(){
-    const won = document.createElement("h2");
+    console.log("function winning")
+    const won = document.querySelector("h2");
     won.innerHTML="You Win!"
-    document.h1.after(won)
+    //document.h1.after(won)
     const againButton = document.createElement("button")
     againButton.innerHTML = "Play again?"
+    //document.h2.append(againButton);
   }
 
   // - When the user has `100` or more points, display a victory screen
-  // - There should be an `<h2>` element with the _exact_ text `You Win!`
+
   // - There should be a button with the text `Play again?` (including the question mark)
   //   - Clicking on this button starts the game over again with a score of 0, a `+1` button, etc.
   // - Keep the user's score on the screen
@@ -48,7 +60,10 @@ function App() {
 
 
 
-  function startOver() {}
+  function startOver() {
+    <button onClick={handleToggle} className="start-over"></button>
+    
+  }
 
 
 
@@ -61,6 +76,12 @@ function App() {
         <button onClick={() => levelUp(score)}>
           Pay 10 points to change from +{point} to +{point+1}
         </button>
+        <h2 className="youWin" > </h2>
+        <button onClick={handleToggle} className="start-over"></button>
+        <Switch 
+          isOn={value}
+          handleToggle={() => setValue(!value)}
+          />
 
 
       </div>

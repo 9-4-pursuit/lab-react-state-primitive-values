@@ -9,7 +9,7 @@ TO DO
 - Once the user has accumulated 100 points, the game shows "You Win!" and allows the player to restart the game.
 
 - When the user has `100` or more points, display a victory screen
-  - There should be an `<h2>` element with the _exact_ text `You Win!`
+  x-done There should be an `<h2>` element with the _exact_ text `You Win!`
   - There should be a button with the text `Play again?` (including the question mark)
     - Clicking on this button starts the game over again with a score of 0, a `+1` button, etc.
   - Keep the user's score on the screen
@@ -34,6 +34,7 @@ DONE
   - If the user has enough points, reduce the score by 10, and add `1` to points you add to your score each time you click the button.
   - The button text should change as well, for example from `+1` to `+2`
   - The pay button text should also update, for example from `Pay 10 points to change from +1 to +2` to `Pay 10 points to change from +2 to +3`
+  -  // - There should be an `<h2>` element with the _exact_ text `You Win!`
 
 
 ### Detailed list
