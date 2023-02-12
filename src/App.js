@@ -7,14 +7,6 @@ function App () {
 
   function changeScore() {
     setScore(score + increment);
-    if (score >= 100) {
-      return (
-        <div>
-          <h2>You Win!</h2>
-          <button onClick={restart}>Play again?</button>
-        </div>
-      )
-    }
   }
 
   function changeIncrement() {
@@ -27,7 +19,8 @@ function App () {
   }
 
   function restart() {
-
+    setIncrement(1);
+    setScore(0);
   }
 
   if (score >= 100) {
