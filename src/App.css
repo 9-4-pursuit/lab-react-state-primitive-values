@@ -4,11 +4,26 @@ main {
   width: 50%;
 }
 
+.App {
+
+  justify-content: center;
+  text-align: center;
+}
+
 button {
   padding: 10px 25px;
   margin:  25px;
   line-height: 1.5;
   border: 100px;
+}
+
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .start-over {
@@ -47,11 +62,16 @@ button {
   width:60px
 }
 
+#playAgain {
+  cursor: pointer;
+}
+
 #pointValue {
   margin: 0 25px;
   color:grey;
   font-size: larger;
   font-weight: bold;
   font-kerning: auto;
-  background-color: #f0f066;
+  background-color: lightgoldenrodyellow;
+  border:  2px solid yellow;
 }
