@@ -1,0 +1,141 @@
+What happens when user has 100 points?
+  // - When the user has `100` or more points, display a victory screen
+  // - There should be a button with the text `Play again?` (including the question mark)
+  //   - Clicking on this button starts the game over again with a score of 0, a `+1` button, etc.
+  // - Keep the user's score on the screen
+  // - Do not show the buttons to add to the score or pay points.
+
+
+
+
+=================================
+
+didn't  use:  
+
+
+  //const removeElement = () => {setVisible  }
+  //const showElement= () => setVisibile(true);
+  //const hideElement= () => setVisibile(false);
+
+
+======================================
+
+Took out:
+/* function winner (){} 
+    //toggle visibility of increment button
+    //toggle visibility of play again button
+    //toggle visibility of pay for points button  */
+
+  function winning(){
+    console.log("function winning")
+    const won = document.querySelector("h2");
+    won.innerHTML="You Win!"
+  }
+  ==========================
+
+
+add button to restart the game
+make a victory screen
+make a "You Win!" string that appears when score is >99
+
+
+
+TO DO
+
+- Once the user has accumulated 100 points, the game shows "You Win!" and allows the player to restart the game.
+
+- When the user has `100` or more points, display a victory screen
+  x-done There should be an `<h2>` element with the _exact_ text `You Win!`
+  - There should be a button with the text `Play again?` (including the question mark)
+    - Clicking on this button starts the game over again with a score of 0, a `+1` button, etc.
+  - Keep the user's score on the screen
+  - Do not show the buttons to add to the score or pay points.
+
+
+
+
+DONE
+- The value of `X` starts at 1.
+- Clicking the "+X" button will increase the score by `X`. 
+- If the user has at least 10 points and clicks the button "Pay 10 points to change from +X to +Y", the value of `X` will increase by 1. For example, at the beginning of the game the incrementor will be "+1". If you pay 10 points, the incrementor will change to "+2".
+- If the user doesn't have 10 points but clicks the button "Pay 10 points to change from +X to +Y", an alert message will say "You can't afford that!"
+-----
+- Display the current score to the user, starting from a score of `0`
+  - Use the _exact_ text: `Current Score: ` followed by the score
+- Clicking a button increments the score by one
+  - The button text should have the _exact_ text: `+1`
+- Have a button where the user can spend `10` points to increase the value of each click by `1`
+  - The button should have the _exact_ text: `Pay 10 points to change from +1 to +2`
+  - Display an `alert` with the _exact_ text `You can't afford that!` if the user doesn't have enough points to spend
+  - If the user has enough points, reduce the score by 10, and add `1` to points you add to your score each time you click the button.
+  - The button text should change as well, for example from `+1` to `+2`
+  - The pay button text should also update, for example from `Pay 10 points to change from +1 to +2` to `Pay 10 points to change from +2 to +3`
+  -  // - There should be an `<h2>` element with the _exact_ text `You Win!`
+
+
+### Detailed list
+
+The following is a list of more detailed requirements. As always, check the tests to see exactly what is being tested.
+
+
+
+
+  const [currentView, setCurrentView]=useState('component1')
+  const changeCurrentView = (view) => setCurrentView(view)
+const renderViews = () => {
+  switch(currentView) {
+    case 'component1':
+      return <component1 changeCurrentView={changeCurrentView} />
+    default:
+      return <component1 changeCurrentView={changeCurrentView} />
+  }
+}
+
+        {/* <div>
+          <button className="component1" onClick={() => changeCurrentView("component1")}></button>
+        </div> */}
+
+
+
+
+    //document.h1.after(won)
+    // const againButton = document.createElement("button")
+    // againButton.innerHTML = "Play again?"
+    //document.h2.append(againButton);
+
+    ============
+      const Switch = ({ isOn, handleToggle }) => {
+    return (
+        <>
+        <input
+        checked={isOn}
+        onClick = { handleToggle }
+        className = "start-over-checkbox"
+        id = {`start-over-new`}
+        type="button"
+        />
+        
+        <label 
+            className="start-over-label"
+            htmlFor={ `start-over-new`}
+        >
+            <span className={`start-over-button`} />
+        </label>      
+        </>
+    );
+};
+
+
+
+what was I even trying to do here? 
+
+        <div className="app">
+          <Switch 
+            isOn={value}
+            handleToggle={() => setValue(!value)}
+            />
+        </div>
+
+
+
+===================
